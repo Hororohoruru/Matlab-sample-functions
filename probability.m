@@ -22,8 +22,8 @@ fprintf('    The probability of...wait.\n') %%The program asks if p ~= 0.5
 prompt1 = '    Sorry for asking this, but I hope that your coin''s probability of going heads is 50%, right? (y/n): ';
 x = lower(input(prompt1, 's'));       
                                       
-if x == 'y'                           %%If the answer is 'y', it continues
-    fprintf('\n')                     %%normally with the p's default value
+if x == 'y'                           %%If the answer is 'y', it continues%%
+    fprintf('\n')                     %%normally with the p's default value%%
     fprintf('    Thank you, sorry for asking such a silly question. Then:\n')
     fprintf('\n')
     if nargin == 1                    %%If only n was provided, then it
