@@ -32,12 +32,13 @@ if x == 'y'                           %%If the answer is 'y', it continues
             prob = A*(p^k)*((1-p)^(n-k));
             fprintf('    The probability of getting %d heads in %d flips is %.6f%%\n', k, n, prob)
         end
-    else                              %%If k is provided too, it only 
+    else                              %%If k is provided too, it only
+    else                              %%If k is provided too, it only
         A = nchoosek(n,k);            %%calculates for that value of k
         prob = A*(p^k)*((1-p)^(n-k));
         fprintf('    The probability of getting %d heads in %d flips is %.6f%%\n', k, n, prob)
     end
-elseif x == 'n'                       %%If the answer is 'n', it asks for the
+elseif x == 'n'                       %%If the answer is 'n', it asks for
     fprintf('\n')                     %%the new value of p
     prompt2 = '    ...oh. Well, then what''s your coin''s probability of going heads? (Input an integer between 1 and 100): ';
     y = input(prompt2);
