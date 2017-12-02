@@ -19,6 +19,7 @@ fprintf('If we flip a coin with %.2f%% probability of going heads %d times:\n', 
 fprintf('\n')
 
 fprintf('    The probability of...wait.\n') %%The program asks if p ~= 0.5
+
 prompt1 = '    Sorry for asking this, but I hope that your coin''s probability of going heads is 50%, right? (y/n): ';
 x = lower(input(prompt1, 's'));       
                                       
