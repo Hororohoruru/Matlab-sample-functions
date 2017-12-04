@@ -1,2 +1,2 @@
-# Matlab-sample-functions
-Sample functions I create while learning to use MATLAB
+# Matlab-sample-functions-and-scripts
+Sample functions and scripts I create while learning to use MATLAB
