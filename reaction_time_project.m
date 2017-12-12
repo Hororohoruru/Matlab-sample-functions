@@ -1,4 +1,4 @@
-%This scrip will create a blank figure and present several stimuli
+%This script will create a blank figure and present several stimuli
 %to the participant.
 
 %In each trial, the participant must quickly perform a visual search
@@ -60,3 +60,108 @@ for n = 1:40     %This loop will generate the 40 trials for each condition
     delete(gca)
 end
 
+%Contidion with 8 stimuli starts here. The code is the same, with the
+%exception of the new generated raw and correct matrices. Also, the inner
+%for loop that creates the stimuli is iterated 4 times. This will also
+%apply to the 12 and 16 stimulli condition, where the loop will iterate 6
+%and 8 times, respectively.
+
+raw_8 = zeros(40,2);
+correct_8 = zeros(40,2);
+
+for n = 1:40     
+    axis off
+    for i = 1:4
+        O = text(rand(1,1), rand(1,1), 'O', 'Color', 'b', 'FontSize', 12);
+        X = text(rand(1,1), rand(1,1), 'X', 'Color', 'b', 'FontSize', 12);
+    end
+    target_chance = rand(1,1);   
+    if target_chance < 0.5       
+        set(X, 'Color', 'k')     
+        raw_8(n,2) = 1;          
+    end
+    tic
+    pause
+    answer = get(h, 'CurrentCharacter');
+    correct_8(n,2) = toc;        
+    if answer == 's'
+        answer = 1;
+    elseif answer == 'l'
+        answer = 0;
+    else                         
+        answer = 2;              
+    end                          
+    raw_8(n,1) = answer;         
+    if raw_8(n,1) == raw_8(n,2)  
+        correct_8(n,1) = 1;
+    end
+    delete(gca)
+end
+
+%Condition with 12 stimuli
+
+raw_12 = zeros(40,2);
+correct_12 = zeros(40,2);
+
+for n = 1:40     
+    axis off
+    for i = 1:6
+        O = text(rand(1,1), rand(1,1), 'O', 'Color', 'b', 'FontSize', 12);
+        X = text(rand(1,1), rand(1,1), 'X', 'Color', 'b', 'FontSize', 12);
+    end
+    target_chance = rand(1,1);   
+    if target_chance < 0.5       
+        set(X, 'Color', 'k')     
+        raw_12(n,2) = 1;          
+    end
+    tic
+    pause
+    answer = get(h, 'CurrentCharacter');
+    correct_12(n,2) = toc;        
+    if answer == 's'
+        answer = 1;
+    elseif answer == 'l'
+        answer = 0;
+    else                         
+        answer = 2;              
+    end                          
+    raw_12(n,1) = answer;        
+    if raw_12(n,1) == raw_12(n,2)
+        correct_12(n,1) = 1;
+    end
+    delete(gca)
+end
+
+%Condition with 16 stimuli
+
+raw_16 = zeros(40,2);
+correct_16 = zeros(40,2);
+
+for n = 1:40     
+    axis off
+    for i = 1:8
+        O = text(rand(1,1), rand(1,1), 'O', 'Color', 'b', 'FontSize', 12);
+        X = text(rand(1,1), rand(1,1), 'X', 'Color', 'b', 'FontSize', 12);
+    end
+    target_chance = rand(1,1);   
+    if target_chance < 0.5       
+        set(X, 'Color', 'k')     
+        raw_16(n,2) = 1;          
+    end
+    tic
+    pause
+    answer = get(h, 'CurrentCharacter');
+    correct_16(n,2) = toc;        
+    if answer == 's'
+        answer = 1;
+    elseif answer == 'l'
+        answer = 0;
+    else                         
+        answer = 2;              
+    end                          
+    raw_16(n,1) = answer;        
+    if raw_16(n,1) == raw_16(n,2)
+        correct_16(n,1) = 1;
+    end
+    delete(gca)
+end
